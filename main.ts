@@ -1,11 +1,13 @@
 import { BarChart } from './barChart'
+import { DonutChart } from './donutChart'
 window.onload = () => {
-    const canvas: HTMLCanvasElement = document.querySelector('#canvas');
-    canvas.width = document.body.clientWidth;
-    canvas.height = document.body.clientHeight;
-    const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+    const canvasBarChart: HTMLCanvasElement = document.querySelector('#canvas');
+    canvasBarChart.width = 800;
+    canvasBarChart.height = 500;
+    const ctx: CanvasRenderingContext2D = canvasBarChart.getContext('2d');
     
     /*
+    Line
     ctx.beginPath();
     ctx.lineWidth = 15;
     ctx.lineCap = 'round';
@@ -26,5 +28,18 @@ window.onload = () => {
         { label: 'Friday', value: 65},
         { label: 'Sunday', value: 24}
     ]
-    new BarChart(ctx, data, canvas.width, canvas.height);
+    new BarChart(ctx, data, canvasBarChart.width, canvasBarChart.height);
+
+    const canvasDonutChart: HTMLCanvasElement = document.querySelector('#canvas2');
+    canvasDonutChart.width = 800;
+    canvasDonutChart.height = 500;
+    const ctx2: CanvasRenderingContext2D = canvasDonutChart.getContext('2d');
+
+    const data2 = [
+        { label: 'Foo', value: 33, color: 'red'},
+        { label: 'Bar', value: 55, color: 'green'},
+        { label: 'Baz', value: 12, color: 'blue'}
+    ];
+
+    new DonutChart(ctx2, data2, canvasDonutChart.width, canvasDonutChart.height);
 }

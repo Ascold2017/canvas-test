@@ -42,10 +42,10 @@ export class BarChart {
         for(let i = 0; i < this.labels.length; i++) {
             this.context.fillStyle = 'black'
             const xOffset = ((i + 1) * this.itemSpace) + this.gap - this.itemSpace / 2;
-            this.context.font = '12px normal Roboto'
+            this.context.font = 'normal 12px Roboto, sans-serif'
             this.context.textAlign = 'center';
             this.context.textBaseline = 'top'
-            this.context.fillText(this.labels[i], xOffset, this.canvasHeight - this.gap + 3)
+            this.context.fillText(this.labels[i], xOffset, this.canvasHeight - this.gap +5)
         }
     }
 
